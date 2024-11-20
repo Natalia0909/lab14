@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+
+    <title>Масив трикутних чисел</title>
+
+</head>
+<h1>Результати виконання завдання 2</h1>
+<body>
+
+   <script>
+      const arr =[];
+      for (let i = 0; i <= 15; i++) {
+          arr.push(Math.floor(Math.random() * 201) - 100);
+      }
+      document.write("Невідсортований: " + arr.join(" ") + "<br>");
+  
+      const A = -46;
+      const B = 13;
+  
+      // середнє арифметичне чисел, що не входять в проміжок [A, B]
+      const outsideRange = arr.filter(num => num < A || num > B);
+      const meanOutsideRange = outsideRange.reduce((sum, num) => sum + num, 0) / outsideRange.length;
+  
+      document.write("Середнє арифметичне чисел, що не входять у проміжок [A;B]:  " + meanOutsideRange+ "<br>");
+  // рахуємо кратні 3
+      const positiveCountOnMultiplesOf3 = arr.reduce((count, num, index) => {
+          if (index % 3 === 0 && num > 0) {
+              return count + 1;
+          }
+          return count;
+      }, 0);
+  
+      document.write("Кількість додатних чисел, кратних 3: " + positiveCountOnMultiplesOf3);
+  
+  
+  </script>
+   <h1>Next steps</h1>
+   <a href="index.html" class="butn">Повернутися</a>
+
+
+</body>
+</html>

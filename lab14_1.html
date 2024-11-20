@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+
+    <title>Масив трикутних чисел</title>
+
+</head>
+<h1>Результати виконання завдання 1</h1>
+<body>
+
+   <script>
+      let treag = [];
+      for (let n = 1; n <= 10; n++) {
+          treag.push(n * (n + 1) / 2); 
+      }
+
+      document.write("Масив трикутних чисел: ");
+      document.write(treag.join("  ") + "<br>");
+
+      let kvd = [];
+      for (let i = 1; i <= 10; i++) {
+          kvd.push(i * i); 
+      }
+
+      document.write("Масив квадратів: ");
+      document.write(kvd.join("  ") + "<br>");
+
+      let rez = treag.concat(kvd);
+
+      document.write("Об'єднаний масив: ");
+      document.write(rez.join("  ") + "<br>");
+
+      rez.sort((a, b) => b - a); 
+
+      document.write("Відсортований масив у зворотному порядку: ");
+      document.write(rez.join("  ") + "<br>");
+  </script>
+
+   <h1>Next steps</h1>
+   <a href="index.html" class="butn">Повернутися</a>
+
+
+</body>
+</html>

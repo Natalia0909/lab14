@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+
+    <title>Масив трикутних чисел</title>
+
+</head>
+<h1>Результати виконання завдання 2</h1>
+<body>
+
+   <script>
+      // Створення масивів
+      const fruits = ['apple', 'pineapple', 'mango', 'melon', 'grape'];
+      const citrus = ['orange', 'lemon', 'lime'];
+
+      // Виведення масивів
+      document.write("Масив fruits: " + fruits.join(", ") + "<br>");
+      document.write("Масив citrus: " + citrus.join(", ") + "<br>");
+
+      // Об'єднаний масив fruits та citrus
+      const combinedFruits = fruits.concat(citrus);
+      document.write("Об'єднаний масив: " + combinedFruits.join(", ") + "<br>");
+
+      // Додання елементів після mango
+      const updatedFruits = [...fruits];
+      const index = updatedFruits.indexOf('mango');
+      updatedFruits.splice(index + 1, 0, 'pear', 'cherry', 'plum', 'raspberry', 'strawberry');
+      document.write("Масив після додавання елементів: " + updatedFruits.join(", ") + "<br>");
+
+      // Видалення останніх 3 елементів
+      const fruitsWithoutLastThree = [...fruits];
+      fruitsWithoutLastThree.splice(-3);
+      document.write("Масив без останніх 3 елементів: " + fruitsWithoutLastThree.join(", ") + "<br>");
+
+      // Сортування в алфавітному порядку
+      const sortedFruits = [...fruits].sort();
+      document.write("Масив у алфавітному порядку: " + sortedFruits.join(", ") + "<br>");
+
+      // Сортування в зворотному алфавітному порядку
+      const reversedFruits = [...fruits].sort().reverse();
+      document.write("Масив у зворотному алфавітному порядку: " + reversedFruits.join(", ") + "<br>");
+
+      // Сортування за довжиною слів
+      const lengthSortedFruits = [...fruits].sort((a, b) => a.length - b.length);
+      document.write("Масив, відсортований за довжиною слів: " + lengthSortedFruits.join(", ") + "<br>");
+  </script>
+  
+   <h1>Next steps</h1>
+   <a href="index.html" class="butn">Повернутися</a>
+
+
+</body>
+</html>

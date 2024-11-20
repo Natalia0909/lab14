@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+
+    <title>Масив трикутних чисел</title>
+
+</head>
+<h1>Результати виконання завдання 2</h1>
+<body>
+   <div id="results"></div>
+
+   <script>
+      const arr = Array.from({ length: 15 }, () => Math.floor(Math.random() * 100));
+      const resultsDiv = document.getElementById("results");
+
+      const findIndex = (array, comparator) => array.reduce((bestIdx, _, i) => comparator(array[i], array[bestIdx]) ? i : bestIdx, 0);
+
+      const task1 = (array) => {
+          const maxIndex = findIndex(array, (a, b) => a > b);
+          [array[maxIndex], array[array.length - 1]] = [array[array.length - 1], array[maxIndex]];
+      };
+
+      const task2 = (array) => {
+          const minIndex = findIndex(array, (a, b) => a < b);
+          if (minIndex > 0) [array[minIndex], array[minIndex - 1]] = [array[minIndex - 1], array[minIndex]];
+      };
+
+      const arrayCopy1 = [...arr];
+      const arrayCopy2 = [...arr];
+      task1(arrayCopy1);
+      task2(arrayCopy2);
+
+      resultsDiv.innerHTML = `
+
+          <p><strong>Task 1 (max swapped with last):</strong> ${arrayCopy1.join(", ")}</p>
+          <p><strong>Task 2 (min swapped with previous):</strong> ${arrayCopy2.join(", ")}</p>
+      `;
+  </script>
+
+   <h1>Next steps</h1>
+   <a href="index.html" class="butn">Повернутися</a>
+
+
+</body>
+</html>
